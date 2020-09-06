@@ -1,0 +1,69 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">Zoom Meeting Setup</span>
+</mat-toolbar>
+
+<div class="container" novalidate>
+  <form [formGroup]="createMeetingForm" class="form" (ngSubmit)="createNewMeeting(createMeetingForm.value)">
+    <h3>Create Meeting</h3>
+    <mat-form-field class="form-element">
+      <mat-label>Email Id</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="!createMeetingForm.controls['email'].valid && createMeetingForm.controls['email'].touched">
+        Email Id is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Topic</mat-label>
+      <input matInput type="text" formControlName="title" required>
+      <mat-error *ngIf="!createMeetingForm.controls['title'].valid && createMeetingForm.controls['title'].touched">
+        Title is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Agenda (optional)</mat-label>
+      <input matInput type="text" formControlName="agenda">
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Password (optional)</mat-label>
+      <input matInput type="password" formControlName="password">
+    </mat-form-field>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!createMeetingForm.valid">CREATE</button>
+    </div>
+  </form>
+  <div *ngIf="meetingCreated" class="form-element">
+    <mat-label>Meeting Id : {{meetingNumber}} </mat-label>
+    <hr>
+    <mat-label>Zoom Join Url : {{joinUrl}}</mat-label>
+  </div>
+</div>
+<div class="separator">OR</div>
+<div class="container" novalidate>
+  <form [formGroup]="joinMeetingForm" class="form" (ngSubmit)="joinMeeting(joinMeetingForm.value)">
+      <h3>Already have Meeting Id?</h3>
+    <mat-form-field class="form-element">
+      <mat-label>Meeting Id</mat-label>
+      <input matInput type="number" formControlName="meetingId">
+      <mat-error *ngIf="!joinMeetingForm.controls['meetingId'].valid && joinMeetingForm.controls['meetingId'].touched">
+        Meeting Id is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="!joinMeetingForm.controls['password'].valid && joinMeetingForm.controls['password'].touched">
+        Meeting password is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Email Id</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="!joinMeetingForm.controls['email'].valid && joinMeetingForm.controls['email'].touched">
+        Attendee Email is required
+      </mat-error>
+    </mat-form-field>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!joinMeetingForm.valid">JOIN</button>
+    </div>
+  </form>
+</div>
