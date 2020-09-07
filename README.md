@@ -44,6 +44,8 @@ Open Zoom developer account [https://zoom.us/signin](https://zoom.us/signin). Af
 
 ![](https://user-images.githubusercontent.com/70849493/92331833-0900d980-f097-11ea-8d34-69dec193f5f9.PNG)
 
+![](https://user-images.githubusercontent.com/70849493/92398653-a23af900-f146-11ea-84b1-6bd1c83f5154.PNG)
+
 [https://marketplace.zoom.us/develop/create](https://marketplace.zoom.us/develop/create)
 
 ![](https://user-images.githubusercontent.com/70849493/92331855-203fc700-f097-11ea-9e8d-702a9b8b39e1.PNG)
